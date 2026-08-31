@@ -1,0 +1,78 @@
+# ─── Firebase ────────────────────────────────────────────────────────────────
+# Real config is downloaded per-developer from the Firebase console.
+# Copy TaskFlow/TaskFlow/GoogleService-Info.plist.sample → GoogleService-Info.plist
+# and fill in your own values. Never commit the real file.
+GoogleService-Info.plist
+GoogleService-Info.*.plist
+*Service-Info.plist
+
+# Firebase emulator / local config
+firebase-debug.log
+firestore-debug.log
+ui-debug.log
+.firebase/
+
+# ─── Xcode ──────────────────────────────────────────────────────────────────
+# User-specific state and per-machine settings
+*.xcuserstate
+*.xcuserdatad/
+xcuserdata/
+*.moved-aside
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Build output
+build/
+DerivedData/
+*.o
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Xcode Cloud / fastlane scan output
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+# Local Swift Package Manager state
+.swiftpm/
+.build/
+Package.resolved
+
+# ─── CocoaPods ──────────────────────────────────────────────────────────────
+Pods/
+Podfile.lock
+
+# ─── Realm ──────────────────────────────────────────────────────────────────
+# Local database files (schema is versioned in code via RealmManager)
+*.realm
+*.realm.lock
+*.realm.management/
+*.realm.note
+default.realm*
+Realm/
+*.realm.exports.*
+
+# ─── macOS ──────────────────────────────────────────────────────────────────
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+.fseventsd
+.TemporaryItems
+Icon?
+
+# ─── Secrets ────────────────────────────────────────────────────────────────
+# Belt-and-braces: catch common local secret files anywhere in the tree
+*.p12
+*.mobileprovision
+*.p8
+.env
+.env.*
+secrets.plist

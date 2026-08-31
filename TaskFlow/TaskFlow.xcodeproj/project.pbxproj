@@ -1,0 +1,779 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DC094B7530446B4C0047EB89 /* TasksProgressCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC094B7430446B4C0047EB89 /* TasksProgressCardView.swift */; };
+		DC094B77304569E90047EB89 /* RollingDayInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC094B76304569E90047EB89 /* RollingDayInfo.swift */; };
+		DC2422EE303B0596007DFBAF /* StatCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2422ED303B0596007DFBAF /* StatCardView.swift */; };
+		DC2422F0303B061D007DFBAF /* CategoryBreakdownRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2422EF303B061D007DFBAF /* CategoryBreakdownRow.swift */; };
+		DC2422F2303B093A007DFBAF /* TrendChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2422F1303B093A007DFBAF /* TrendChartView.swift */; };
+		DC2422F4303B1877007DFBAF /* HabitCompletionLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2422F3303B1877007DFBAF /* HabitCompletionLog.swift */; };
+		DC2422F6303DBA33007DFBAF /* TaskRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2422F5303DBA33007DFBAF /* TaskRow.swift */; };
+		DC2422F8303DD821007DFBAF /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2422F7303DD821007DFBAF /* HeaderView.swift */; };
+		DC2422FA303ED8F7007DFBAF /* SettingsToggleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2422F9303ED8F7007DFBAF /* SettingsToggleRow.swift */; };
+		DC2422FC303F0063007DFBAF /* SettingsNavRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2422FB303F0063007DFBAF /* SettingsNavRow.swift */; };
+		DC2422FE303F0117007DFBAF /* SettingsSectionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2422FD303F0117007DFBAF /* SettingsSectionCard.swift */; };
+		DC242300303F01E2007DFBAF /* AccentColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2422FF303F01E2007DFBAF /* AccentColorPickerView.swift */; };
+		DC242302303F0236007DFBAF /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC242301303F0236007DFBAF /* AppSettings.swift */; };
+		DC242308304055B8007DFBAF /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = DC242307304055B8007DFBAF /* FirebaseAuth */; };
+		DC24230A304055B8007DFBAF /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = DC242309304055B8007DFBAF /* FirebaseCore */; };
+		DC24230C30406192007DFBAF /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC24230B30406192007DFBAF /* AuthManager.swift */; };
+		DC24230F30406202007DFBAF /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC24230E30406202007DFBAF /* LoginView.swift */; };
+		DC242311304063CA007DFBAF /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC242310304063CA007DFBAF /* SignUpView.swift */; };
+		DC2423133040642E007DFBAF /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2423123040642E007DFBAF /* RootView.swift */; };
+		DC2423163041B0EB007DFBAF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC2423153041B0EB007DFBAF /* GoogleService-Info.plist */; };
+		DC24231A3041E379007DFBAF /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2423193041E379007DFBAF /* Date+Extensions.swift */; };
+		DC24231C304305F3007DFBAF /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC24231B304305F3007DFBAF /* NotificationManager.swift */; };
+		DC808C2530398D980090CDED /* AddHabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC808C2430398D980090CDED /* AddHabitView.swift */; };
+		DC808C273039D8330090CDED /* ChartLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC808C263039D8330090CDED /* ChartLevel.swift */; };
+		DC808C293039DCC50090CDED /* AnalyticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC808C283039DCC50090CDED /* AnalyticsViewModel.swift */; };
+		DC9B87E03027561300776598 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DC9B87DF3027561300776598 /* RealmSwift */; };
+		DCCA12F2303483D40096A9CB /* HabitListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCA12F1303483D40096A9CB /* HabitListViewModel.swift */; };
+		DCCA12F43036EAEF0096A9CB /* HabitItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCA12F33036EAEF0096A9CB /* HabitItemView.swift */; };
+		DCCA12F63037213D0096A9CB /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCA12F53037213D0096A9CB /* MockData.swift */; };
+		DCD721893031CF0100FCB746 /* CardStyleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD721633031CF0100FCB746 /* CardStyleModifier.swift */; };
+		DCD7218A3031CF0100FCB746 /* GlassCardModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD721643031CF0100FCB746 /* GlassCardModifier.swift */; };
+		DCD7218B3031CF0100FCB746 /* ShimmerLightModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD721653031CF0100FCB746 /* ShimmerLightModifier.swift */; };
+		DCD7218C3031CF0100FCB746 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD721683031CF0100FCB746 /* Habit.swift */; };
+		DCD7218D3031CF0100FCB746 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD721693031CF0100FCB746 /* Tab.swift */; };
+		DCD7218E3031CF0100FCB746 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7216A3031CF0100FCB746 /* Task.swift */; };
+		DCD7218F3031CF0100FCB746 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7216C3031CF0100FCB746 /* RealmManager.swift */; };
+		DCD721903031CF0100FCB746 /* AppGradients.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7216E3031CF0100FCB746 /* AppGradients.swift */; };
+		DCD721913031CF0100FCB746 /* Color+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7216F3031CF0100FCB746 /* Color+Theme.swift */; };
+		DCD721923031CF0100FCB746 /* Environment+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD721703031CF0100FCB746 /* Environment+Extension.swift */; };
+		DCD721933031CF0100FCB746 /* TaskListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD721733031CF0100FCB746 /* TaskListViewModel.swift */; };
+		DCD721943031CF0100FCB746 /* AnalyticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD721753031CF0100FCB746 /* AnalyticsView.swift */; };
+		DCD721953031CF0100FCB746 /* DailyMotivationBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD721773031CF0100FCB746 /* DailyMotivationBadge.swift */; };
+		DCD721963031CF0100FCB746 /* HabitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD721793031CF0100FCB746 /* HabitsView.swift */; };
+		DCD721973031CF0100FCB746 /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7217B3031CF0100FCB746 /* AddTaskView.swift */; };
+		DCD721983031CF0100FCB746 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7217C3031CF0100FCB746 /* HomeView.swift */; };
+		DCD721993031CF0100FCB746 /* WeeklyStreakView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7217D3031CF0100FCB746 /* WeeklyStreakView.swift */; };
+		DCD7219A3031CF0100FCB746 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD7217F3031CF0100FCB746 /* CircularProgressView.swift */; };
+		DCD7219B3031CF0100FCB746 /* CustomTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD721803031CF0100FCB746 /* CustomTabBarView.swift */; };
+		DCD7219C3031CF0100FCB746 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD721823031CF0100FCB746 /* SettingsView.swift */; };
+		DCD7219D3031CF0100FCB746 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD721843031CF0100FCB746 /* MainTabView.swift */; };
+		DCD7219E3031CF0100FCB746 /* TaskFlowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD721873031CF0100FCB746 /* TaskFlowApp.swift */; };
+		DCD721A03031CF0100FCB746 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCD721863031CF0100FCB746 /* Assets.xcassets */; };
+		DCD721A23031DA3A00FCB746 /* GradientBorderModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD721A13031DA3A00FCB746 /* GradientBorderModifier.swift */; };
+		DCD721A530331A5500FCB746 /* SpinModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD721A430331A5500FCB746 /* SpinModifier.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		DC094B7430446B4C0047EB89 /* TasksProgressCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksProgressCardView.swift; sourceTree = "<group>"; };
+		DC094B76304569E90047EB89 /* RollingDayInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollingDayInfo.swift; sourceTree = "<group>"; };
+		DC2422ED303B0596007DFBAF /* StatCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatCardView.swift; sourceTree = "<group>"; };
+		DC2422EF303B061D007DFBAF /* CategoryBreakdownRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryBreakdownRow.swift; sourceTree = "<group>"; };
+		DC2422F1303B093A007DFBAF /* TrendChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendChartView.swift; sourceTree = "<group>"; };
+		DC2422F3303B1877007DFBAF /* HabitCompletionLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCompletionLog.swift; sourceTree = "<group>"; };
+		DC2422F5303DBA33007DFBAF /* TaskRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRow.swift; sourceTree = "<group>"; };
+		DC2422F7303DD821007DFBAF /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		DC2422F9303ED8F7007DFBAF /* SettingsToggleRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsToggleRow.swift; sourceTree = "<group>"; };
+		DC2422FB303F0063007DFBAF /* SettingsNavRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsNavRow.swift; sourceTree = "<group>"; };
+		DC2422FD303F0117007DFBAF /* SettingsSectionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSectionCard.swift; sourceTree = "<group>"; };
+		DC2422FF303F01E2007DFBAF /* AccentColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccentColorPickerView.swift; sourceTree = "<group>"; };
+		DC242301303F0236007DFBAF /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		DC24230B30406192007DFBAF /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		DC24230E30406202007DFBAF /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		DC242310304063CA007DFBAF /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		DC2423123040642E007DFBAF /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		DC24231430406BBC007DFBAF /* TaskFlow.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TaskFlow.entitlements; sourceTree = "<group>"; };
+		DC2423153041B0EB007DFBAF /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DC2423193041E379007DFBAF /* Date+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		DC24231B304305F3007DFBAF /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		DC808C2430398D980090CDED /* AddHabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitView.swift; sourceTree = "<group>"; };
+		DC808C263039D8330090CDED /* ChartLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartLevel.swift; sourceTree = "<group>"; };
+		DC808C283039DCC50090CDED /* AnalyticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsViewModel.swift; sourceTree = "<group>"; };
+		DC9B87C9302752E700776598 /* TaskFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCCA12F1303483D40096A9CB /* HabitListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitListViewModel.swift; sourceTree = "<group>"; };
+		DCCA12F33036EAEF0096A9CB /* HabitItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitItemView.swift; sourceTree = "<group>"; };
+		DCCA12F53037213D0096A9CB /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
+		DCD721633031CF0100FCB746 /* CardStyleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStyleModifier.swift; sourceTree = "<group>"; };
+		DCD721643031CF0100FCB746 /* GlassCardModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassCardModifier.swift; sourceTree = "<group>"; };
+		DCD721653031CF0100FCB746 /* ShimmerLightModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerLightModifier.swift; sourceTree = "<group>"; };
+		DCD721683031CF0100FCB746 /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
+		DCD721693031CF0100FCB746 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
+		DCD7216A3031CF0100FCB746 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		DCD7216C3031CF0100FCB746 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		DCD7216E3031CF0100FCB746 /* AppGradients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGradients.swift; sourceTree = "<group>"; };
+		DCD7216F3031CF0100FCB746 /* Color+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Theme.swift"; sourceTree = "<group>"; };
+		DCD721703031CF0100FCB746 /* Environment+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Environment+Extension.swift"; sourceTree = "<group>"; };
+		DCD721733031CF0100FCB746 /* TaskListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewModel.swift; sourceTree = "<group>"; };
+		DCD721753031CF0100FCB746 /* AnalyticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsView.swift; sourceTree = "<group>"; };
+		DCD721773031CF0100FCB746 /* DailyMotivationBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMotivationBadge.swift; sourceTree = "<group>"; };
+		DCD721793031CF0100FCB746 /* HabitsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsView.swift; sourceTree = "<group>"; };
+		DCD7217B3031CF0100FCB746 /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
+		DCD7217C3031CF0100FCB746 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		DCD7217D3031CF0100FCB746 /* WeeklyStreakView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyStreakView.swift; sourceTree = "<group>"; };
+		DCD7217F3031CF0100FCB746 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
+		DCD721803031CF0100FCB746 /* CustomTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarView.swift; sourceTree = "<group>"; };
+		DCD721823031CF0100FCB746 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		DCD721843031CF0100FCB746 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		DCD721863031CF0100FCB746 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DCD721873031CF0100FCB746 /* TaskFlowApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskFlowApp.swift; sourceTree = "<group>"; };
+		DCD721A13031DA3A00FCB746 /* GradientBorderModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBorderModifier.swift; sourceTree = "<group>"; };
+		DCD721A430331A5500FCB746 /* SpinModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinModifier.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DC9B87C6302752E700776598 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC9B87E03027561300776598 /* RealmSwift in Frameworks */,
+				DC24230A304055B8007DFBAF /* FirebaseCore in Frameworks */,
+				DC242308304055B8007DFBAF /* FirebaseAuth in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DC242306304055B8007DFBAF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DC24230D304061EF007DFBAF /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				DC24230E30406202007DFBAF /* LoginView.swift */,
+				DC242310304063CA007DFBAF /* SignUpView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		DC2423173041E335007DFBAF /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				DC2423183041E344007DFBAF /* Extensisons */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		DC2423183041E344007DFBAF /* Extensisons */ = {
+			isa = PBXGroup;
+			children = (
+				DC2423193041E379007DFBAF /* Date+Extensions.swift */,
+			);
+			path = Extensisons;
+			sourceTree = "<group>";
+		};
+		DC9B87C0302752E700776598 = {
+			isa = PBXGroup;
+			children = (
+				DCD721883031CF0100FCB746 /* TaskFlow */,
+				DC242306304055B8007DFBAF /* Frameworks */,
+				DC9B87CA302752E700776598 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DC9B87CA302752E700776598 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DC9B87C9302752E700776598 /* TaskFlow.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DCD721663031CF0100FCB746 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				DCD721A330331A2900FCB746 /* AnimationModifier */,
+				DCD721633031CF0100FCB746 /* CardStyleModifier.swift */,
+				DCD721643031CF0100FCB746 /* GlassCardModifier.swift */,
+				DCD721A13031DA3A00FCB746 /* GradientBorderModifier.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		DCD721673031CF0100FCB746 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				DCD721663031CF0100FCB746 /* Modifiers */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		DCD7216B3031CF0100FCB746 /* Modles */ = {
+			isa = PBXGroup;
+			children = (
+				DCD7216A3031CF0100FCB746 /* Task.swift */,
+				DCD721693031CF0100FCB746 /* Tab.swift */,
+				DCD721683031CF0100FCB746 /* Habit.swift */,
+				DC2422F3303B1877007DFBAF /* HabitCompletionLog.swift */,
+			);
+			path = Modles;
+			sourceTree = "<group>";
+		};
+		DCD7216D3031CF0100FCB746 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				DCD7216C3031CF0100FCB746 /* RealmManager.swift */,
+				DCCA12F53037213D0096A9CB /* MockData.swift */,
+				DC24230B30406192007DFBAF /* AuthManager.swift */,
+				DC24231B304305F3007DFBAF /* NotificationManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		DCD721723031CF0100FCB746 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				DCD7216E3031CF0100FCB746 /* AppGradients.swift */,
+				DCD7216F3031CF0100FCB746 /* Color+Theme.swift */,
+				DCD721703031CF0100FCB746 /* Environment+Extension.swift */,
+				DC808C263039D8330090CDED /* ChartLevel.swift */,
+				DC2422FF303F01E2007DFBAF /* AccentColorPickerView.swift */,
+				DC242301303F0236007DFBAF /* AppSettings.swift */,
+				DC094B76304569E90047EB89 /* RollingDayInfo.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		DCD721743031CF0100FCB746 /* ViewModles */ = {
+			isa = PBXGroup;
+			children = (
+				DCD721733031CF0100FCB746 /* TaskListViewModel.swift */,
+				DCCA12F1303483D40096A9CB /* HabitListViewModel.swift */,
+				DC808C283039DCC50090CDED /* AnalyticsViewModel.swift */,
+			);
+			path = ViewModles;
+			sourceTree = "<group>";
+		};
+		DCD721763031CF0100FCB746 /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				DCD721753031CF0100FCB746 /* AnalyticsView.swift */,
+				DC2422F1303B093A007DFBAF /* TrendChartView.swift */,
+			);
+			path = Analytics;
+			sourceTree = "<group>";
+		};
+		DCD721783031CF0100FCB746 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				DCD721773031CF0100FCB746 /* DailyMotivationBadge.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		DCD7217A3031CF0100FCB746 /* Habits */ = {
+			isa = PBXGroup;
+			children = (
+				DCD721793031CF0100FCB746 /* HabitsView.swift */,
+				DCCA12F33036EAEF0096A9CB /* HabitItemView.swift */,
+				DC808C2430398D980090CDED /* AddHabitView.swift */,
+			);
+			path = Habits;
+			sourceTree = "<group>";
+		};
+		DCD7217E3031CF0100FCB746 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				DCD7217C3031CF0100FCB746 /* HomeView.swift */,
+				DCD7217B3031CF0100FCB746 /* AddTaskView.swift */,
+				DCD7217D3031CF0100FCB746 /* WeeklyStreakView.swift */,
+				DC2422F5303DBA33007DFBAF /* TaskRow.swift */,
+				DC094B7430446B4C0047EB89 /* TasksProgressCardView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		DCD721813031CF0100FCB746 /* Reusable Component */ = {
+			isa = PBXGroup;
+			children = (
+				DC2422ED303B0596007DFBAF /* StatCardView.swift */,
+				DCD7217F3031CF0100FCB746 /* CircularProgressView.swift */,
+				DCD721803031CF0100FCB746 /* CustomTabBarView.swift */,
+				DC2422EF303B061D007DFBAF /* CategoryBreakdownRow.swift */,
+				DC2422F7303DD821007DFBAF /* HeaderView.swift */,
+			);
+			path = "Reusable Component";
+			sourceTree = "<group>";
+		};
+		DCD721833031CF0100FCB746 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				DCD721823031CF0100FCB746 /* SettingsView.swift */,
+				DC2422F9303ED8F7007DFBAF /* SettingsToggleRow.swift */,
+				DC2422FB303F0063007DFBAF /* SettingsNavRow.swift */,
+				DC2422FD303F0117007DFBAF /* SettingsSectionCard.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		DCD721853031CF0100FCB746 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DC24230D304061EF007DFBAF /* Login */,
+				DCD7217E3031CF0100FCB746 /* Home */,
+				DCD7217A3031CF0100FCB746 /* Habits */,
+				DCD721763031CF0100FCB746 /* Analytics */,
+				DCD721833031CF0100FCB746 /* Settings */,
+				DCD721783031CF0100FCB746 /* Components */,
+				DCD721813031CF0100FCB746 /* Reusable Component */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DCD721883031CF0100FCB746 /* TaskFlow */ = {
+			isa = PBXGroup;
+			children = (
+				DC2423173041E335007DFBAF /* Core */,
+				DC24231430406BBC007DFBAF /* TaskFlow.entitlements */,
+				DCD7216B3031CF0100FCB746 /* Modles */,
+				DCD721853031CF0100FCB746 /* Views */,
+				DCD721743031CF0100FCB746 /* ViewModles */,
+				DCD7216D3031CF0100FCB746 /* Services */,
+				DCD721723031CF0100FCB746 /* Utilities */,
+				DCD721673031CF0100FCB746 /* DesignSystem */,
+				DCD721863031CF0100FCB746 /* Assets.xcassets */,
+				DCD721873031CF0100FCB746 /* TaskFlowApp.swift */,
+				DC2423123040642E007DFBAF /* RootView.swift */,
+				DCD721843031CF0100FCB746 /* MainTabView.swift */,
+				DC2423153041B0EB007DFBAF /* GoogleService-Info.plist */,
+			);
+			path = TaskFlow;
+			sourceTree = "<group>";
+		};
+		DCD721A330331A2900FCB746 /* AnimationModifier */ = {
+			isa = PBXGroup;
+			children = (
+				DCD721A430331A5500FCB746 /* SpinModifier.swift */,
+				DCD721653031CF0100FCB746 /* ShimmerLightModifier.swift */,
+			);
+			path = AnimationModifier;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DC9B87C8302752E700776598 /* TaskFlow */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC9B87D4302752E800776598 /* Build configuration list for PBXNativeTarget "TaskFlow" */;
+			buildPhases = (
+				DC9B87C5302752E700776598 /* Sources */,
+				DC9B87C6302752E700776598 /* Frameworks */,
+				DC9B87C7302752E700776598 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TaskFlow;
+			packageProductDependencies = (
+				DC9B87DF3027561300776598 /* RealmSwift */,
+				DC242307304055B8007DFBAF /* FirebaseAuth */,
+				DC242309304055B8007DFBAF /* FirebaseCore */,
+			);
+			productName = TaskFlow;
+			productReference = DC9B87C9302752E700776598 /* TaskFlow.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DC9B87C1302752E700776598 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2630;
+				LastUpgradeCheck = 2630;
+				TargetAttributes = {
+					DC9B87C8302752E700776598 = {
+						CreatedOnToolsVersion = 26.3;
+					};
+				};
+			};
+			buildConfigurationList = DC9B87C4302752E700776598 /* Build configuration list for PBXProject "TaskFlow" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DC9B87C0302752E700776598;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				DC9B87DC3027561300776598 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				DC24230530405204007DFBAF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = DC9B87CA302752E700776598 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DC9B87C8302752E700776598 /* TaskFlow */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DC9B87C7302752E700776598 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCD721A03031CF0100FCB746 /* Assets.xcassets in Resources */,
+				DC2423163041B0EB007DFBAF /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DC9B87C5302752E700776598 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC2422EE303B0596007DFBAF /* StatCardView.swift in Sources */,
+				DC2422FE303F0117007DFBAF /* SettingsSectionCard.swift in Sources */,
+				DCCA12F43036EAEF0096A9CB /* HabitItemView.swift in Sources */,
+				DCCA12F2303483D40096A9CB /* HabitListViewModel.swift in Sources */,
+				DCD721893031CF0100FCB746 /* CardStyleModifier.swift in Sources */,
+				DCD721A23031DA3A00FCB746 /* GradientBorderModifier.swift in Sources */,
+				DC2422F6303DBA33007DFBAF /* TaskRow.swift in Sources */,
+				DCD7218A3031CF0100FCB746 /* GlassCardModifier.swift in Sources */,
+				DC24230F30406202007DFBAF /* LoginView.swift in Sources */,
+				DCD7218B3031CF0100FCB746 /* ShimmerLightModifier.swift in Sources */,
+				DCD7218C3031CF0100FCB746 /* Habit.swift in Sources */,
+				DC2422F0303B061D007DFBAF /* CategoryBreakdownRow.swift in Sources */,
+				DCD7218D3031CF0100FCB746 /* Tab.swift in Sources */,
+				DC094B77304569E90047EB89 /* RollingDayInfo.swift in Sources */,
+				DC808C273039D8330090CDED /* ChartLevel.swift in Sources */,
+				DC2423133040642E007DFBAF /* RootView.swift in Sources */,
+				DCD7218E3031CF0100FCB746 /* Task.swift in Sources */,
+				DC808C2530398D980090CDED /* AddHabitView.swift in Sources */,
+				DC242311304063CA007DFBAF /* SignUpView.swift in Sources */,
+				DC2422F4303B1877007DFBAF /* HabitCompletionLog.swift in Sources */,
+				DCD7218F3031CF0100FCB746 /* RealmManager.swift in Sources */,
+				DC24230C30406192007DFBAF /* AuthManager.swift in Sources */,
+				DCD721903031CF0100FCB746 /* AppGradients.swift in Sources */,
+				DCD721913031CF0100FCB746 /* Color+Theme.swift in Sources */,
+				DCD721923031CF0100FCB746 /* Environment+Extension.swift in Sources */,
+				DC2422F8303DD821007DFBAF /* HeaderView.swift in Sources */,
+				DCD721933031CF0100FCB746 /* TaskListViewModel.swift in Sources */,
+				DC242302303F0236007DFBAF /* AppSettings.swift in Sources */,
+				DC2422FC303F0063007DFBAF /* SettingsNavRow.swift in Sources */,
+				DCD721943031CF0100FCB746 /* AnalyticsView.swift in Sources */,
+				DCD721953031CF0100FCB746 /* DailyMotivationBadge.swift in Sources */,
+				DCD721A530331A5500FCB746 /* SpinModifier.swift in Sources */,
+				DCD721963031CF0100FCB746 /* HabitsView.swift in Sources */,
+				DCD721973031CF0100FCB746 /* AddTaskView.swift in Sources */,
+				DC24231A3041E379007DFBAF /* Date+Extensions.swift in Sources */,
+				DC242300303F01E2007DFBAF /* AccentColorPickerView.swift in Sources */,
+				DCD721983031CF0100FCB746 /* HomeView.swift in Sources */,
+				DCD721993031CF0100FCB746 /* WeeklyStreakView.swift in Sources */,
+				DCD7219A3031CF0100FCB746 /* CircularProgressView.swift in Sources */,
+				DC094B7530446B4C0047EB89 /* TasksProgressCardView.swift in Sources */,
+				DC2422F2303B093A007DFBAF /* TrendChartView.swift in Sources */,
+				DC2422FA303ED8F7007DFBAF /* SettingsToggleRow.swift in Sources */,
+				DCCA12F63037213D0096A9CB /* MockData.swift in Sources */,
+				DCD7219B3031CF0100FCB746 /* CustomTabBarView.swift in Sources */,
+				DC24231C304305F3007DFBAF /* NotificationManager.swift in Sources */,
+				DCD7219C3031CF0100FCB746 /* SettingsView.swift in Sources */,
+				DCD7219D3031CF0100FCB746 /* MainTabView.swift in Sources */,
+				DCD7219E3031CF0100FCB746 /* TaskFlowApp.swift in Sources */,
+				DC808C293039DCC50090CDED /* AnalyticsViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		DC9B87D2302752E800776598 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DC9B87D3302752E800776598 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		DC9B87D5302752E800776598 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TaskFlow/TaskFlow.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T26823HHV8;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_INCOMING_NETWORK_CONNECTIONS = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_RESOURCE_ACCESS_AUDIO_INPUT = NO;
+				ENABLE_RESOURCE_ACCESS_BLUETOOTH = NO;
+				ENABLE_RESOURCE_ACCESS_CALENDARS = NO;
+				ENABLE_RESOURCE_ACCESS_CAMERA = NO;
+				ENABLE_RESOURCE_ACCESS_CONTACTS = NO;
+				ENABLE_RESOURCE_ACCESS_LOCATION = NO;
+				ENABLE_RESOURCE_ACCESS_PRINTING = NO;
+				ENABLE_RESOURCE_ACCESS_USB = NO;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = MMH.TaskFlow;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = auto;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				XROS_DEPLOYMENT_TARGET = 26.2;
+			};
+			name = Debug;
+		};
+		DC9B87D6302752E800776598 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TaskFlow/TaskFlow.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T26823HHV8;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_INCOMING_NETWORK_CONNECTIONS = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_RESOURCE_ACCESS_AUDIO_INPUT = NO;
+				ENABLE_RESOURCE_ACCESS_BLUETOOTH = NO;
+				ENABLE_RESOURCE_ACCESS_CALENDARS = NO;
+				ENABLE_RESOURCE_ACCESS_CAMERA = NO;
+				ENABLE_RESOURCE_ACCESS_CONTACTS = NO;
+				ENABLE_RESOURCE_ACCESS_LOCATION = NO;
+				ENABLE_RESOURCE_ACCESS_PRINTING = NO;
+				ENABLE_RESOURCE_ACCESS_USB = NO;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = MMH.TaskFlow;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = auto;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				XROS_DEPLOYMENT_TARGET = 26.2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DC9B87C4302752E700776598 /* Build configuration list for PBXProject "TaskFlow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC9B87D2302752E800776598 /* Debug */,
+				DC9B87D3302752E800776598 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC9B87D4302752E800776598 /* Build configuration list for PBXNativeTarget "TaskFlow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC9B87D5302752E800776598 /* Debug */,
+				DC9B87D6302752E800776598 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DC24230530405204007DFBAF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.18.0;
+			};
+		};
+		DC9B87DC3027561300776598 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift";
+			requirement = {
+				branch = community;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DC242307304055B8007DFBAF /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC24230530405204007DFBAF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		DC242309304055B8007DFBAF /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC24230530405204007DFBAF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		DC9B87DF3027561300776598 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC9B87DC3027561300776598 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = DC9B87C1302752E700776598 /* Project object */;
+}
