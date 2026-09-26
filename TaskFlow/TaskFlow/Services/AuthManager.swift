@@ -42,7 +42,7 @@ class AuthManager {
             DispatchQueue.main.async {
                 self?.isLoading = false
                 if let error {
-                    self?.errorMessage = error.localizedDescription
+                    self?.errorMessage = self?.friendlyErrorMessage(error)
                 }
                 // সফল হলে addStateDidChangeListener নিজে থেকেই isLoggedIn আপডেট করে দিবে
             }
@@ -58,7 +58,7 @@ class AuthManager {
             DispatchQueue.main.async {
                 self?.isLoading = false
                 if let error {
-                    self?.errorMessage = error.localizedDescription
+                    self?.errorMessage = self?.friendlyErrorMessage(error)
                 }
             }
         }
@@ -95,13 +95,25 @@ class AuthManager {
     
     private func friendlyErrorMessage(_ error: Error) -> String {
         let nsError = error as NSError
+        guard nsError.domain == AuthErrorDomain else {
+            return error.localizedDescription
+        }
+
         switch AuthErrorCode(rawValue: nsError.code) {
         case .invalidEmail: return "Please enter a valid email address."
         case .emailAlreadyInUse: return "This email is already registered."
         case .weakPassword: return "Password should be at least 6 characters."
         case .wrongPassword: return "Incorrect password. Please try again."
         case .userNotFound: return "No account found with this email."
-        case .networkError: return "Network error. Check your connection."
+        case .userDisabled: return "This account has been disabled."
+        case .invalidCredential:
+            return "Incorrect email or password. If you don't have an account yet, please sign up first."
+        case .operationNotAllowed:
+            return "Email/password sign-in is not enabled for this project."
+        case .tooManyRequests:
+            return "Too many attempts. Please try again later."
+        case .networkError:
+            return "Network error. Check your connection."
         default: return error.localizedDescription
         }
     }
@@ -127,7 +139,7 @@ extension AuthManager {
             DispatchQueue.main.async {
                 self?.isLoading = false
                 if let error {
-                    self?.errorMessage = error.localizedDescription
+                    self?.errorMessage = self?.friendlyErrorMessage(error)
                 }
             }
         }
