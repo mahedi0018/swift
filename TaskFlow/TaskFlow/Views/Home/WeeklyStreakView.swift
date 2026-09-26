@@ -19,6 +19,7 @@ struct WeeklyStreakView: View {
     var body: some View {
         HStack {
             ForEach(weekData) { data in
+                let _ = print("WeeklyStreakView", data)
                 
                 BarItemView(data: data)
             }

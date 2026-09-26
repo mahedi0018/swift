@@ -6,29 +6,27 @@
 //
 
 import SwiftUI
-
+import RealmSwift
 struct AnalyticsView: View {
     
     @Environment(\.tabBarHeight) private var tabBarHeight
     @Environment(\.topSafeArea) private var topSafeArea
     
-    @State private var taskViewModel = TaskListViewModel()
-    @State private var habitViewModel = HabitListViewModel()
     @State private var analyticsViewModel = AnalyticsViewModel()
     
+    @ObservedResults(Task.self) private var allTasks
+    @ObservedResults(Habit.self) private var allHabits
+    @ObservedResults(HabitCompletionLog.self) private var allLogs
     
-    private var allLogs: [HabitCompletionLog] {
-        Array(RealmManager.shared.getAllCompletionLogs())
-    }
     
     private var currentChartData: [ChartDataPoint] {
         switch analyticsViewModel.currentLevel {
         case .week:
-            return analyticsViewModel.weeklyData(taskViewModel.tasks, habitViewModel.habits, allLogs)
+            return analyticsViewModel.weeklyData(Array(allTasks), Array(allHabits), Array(allLogs))
         case .sevenMonth:
-            return analyticsViewModel.sevenMonthData(taskViewModel.tasks, habitViewModel.habits, allLogs)
+            return analyticsViewModel.sevenMonthData(Array(allTasks), Array(allHabits), Array(allLogs))
         case .monthDetail(let month):
-            return analyticsViewModel.monthDetailData(taskViewModel.tasks, habitViewModel.habits, allLogs, for: month)
+            return analyticsViewModel.monthDetailData(Array(allTasks), Array(allHabits), Array(allLogs), for: month)
         }
     }
     
@@ -57,26 +55,28 @@ struct AnalyticsView: View {
                     subtitle: "Your performance overview",
                     hasNotification: true
                 )
+                .staggeredAppear(index: 0)
                 
                 // MARK: - Stat Cards
                 HStack(spacing: 12) {
                     StatCardView(
                         icon: "checkmark",
-                        value: "\(analyticsViewModel.tasksDoneThisMonth(taskViewModel.tasks))",
+                        value: "\(analyticsViewModel.tasksDoneThisMonth(Array(allTasks)))",
                         label: "Tasks Done", subtitle: "This month", color: .success
                     )
                     
                     StatCardView(
                         icon: "flame.fill",
-                        value: "\(analyticsViewModel.habitRate(habitViewModel.habits))%",
+                        value: "\(analyticsViewModel.habitRate(Array(allHabits), logs: Array(allLogs)))%",
                         label: "Habit Rate", subtitle: "Avg completion", color: .success
                     )
                     StatCardView(
                         icon: "bolt.fill",
-                        value: "\(analyticsViewModel.currentStreak(habitViewModel.habits))d",
+                        value: "\(analyticsViewModel.currentStreak(Array(allHabits)))d",
                         label: "Streak", subtitle: "Current run", color: .warning
                     )
                 }
+                .staggeredAppear(index: 1)
                 
                 // MARK: - Trend Chart
                 VStack(alignment: .leading, spacing: 4) {
@@ -127,6 +127,7 @@ struct AnalyticsView: View {
                 }
                 .padding(16)
                 .glassCardStyle()
+                .staggeredAppear(index: 2)
                 
                 // MARK: - Category Breakdown
                 VStack(alignment: .leading, spacing: 20) {
@@ -134,15 +135,17 @@ struct AnalyticsView: View {
                         .font(.title3.bold())
                         .foregroundStyle(Color.textPrimary)
                     
-                    ForEach(analyticsViewModel.categoryBreakdown(taskViewModel.tasks)) { stat in
+                    ForEach(analyticsViewModel.categoryBreakdown(Array(allTasks))) { stat in
                         CategoryBreakdownRow(stat: stat)
                     }
                 }
                 .padding(16)
                 .glassCardStyle()
+                .staggeredAppear(index: 4)
+                
                 
                 // MARK: - Best Performing Day
-                if let best = analyticsViewModel.bestPerformingDay(habitViewModel.habits) {
+                if let best = analyticsViewModel.bestPerformingDay(Array(allHabits), logs: Array(allLogs)) {
                     VStack(alignment: .leading, spacing: 4) {
                         Text("Best performing day")
                             .font(.caption)
@@ -154,12 +157,14 @@ struct AnalyticsView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(16)
                     .glassCardStyle()
+                    .staggeredAppear(index: 5)
                 }
+                   
             }
-            .padding(.top, topSafeArea)
             .padding(16)
             .padding(.bottom, tabBarHeight + 20)
         }
+        .ignoresSafeArea(edges: .all)
     }
 }
 

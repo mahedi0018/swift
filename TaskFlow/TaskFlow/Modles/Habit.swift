@@ -13,6 +13,8 @@ class Habit: Object, Identifiable {
     @Persisted var title: String = ""
     @Persisted var iconName: String = ""
     @Persisted var currentStreak: Int = 0
+    @Persisted var longestStreak: Int = 0
+    @Persisted var freezeTokens: Int = 2    // Kotobar freeze use kora jabe
     @Persisted var goal: Int = 0
     @Persisted var weeklyCompletion: List<Bool>
     @Persisted var colorName: String = "accentPrimary"

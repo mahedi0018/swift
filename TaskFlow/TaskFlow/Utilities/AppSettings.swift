@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
+
 @Observable
 class AppSettings {
     static let shared = AppSettings()
@@ -21,8 +22,8 @@ class AppSettings {
     var habitAlerts: Bool {
         didSet { UserDefaults.standard.set(habitAlerts, forKey: "habitAlertsEnabled") }
     }
-    var darkMode: Bool {
-        didSet { UserDefaults.standard.set(darkMode, forKey: "darkModeEnabled") }
+    var themeMode: ThemeMode {
+        didSet { UserDefaults.standard.set(themeMode.rawValue, forKey: "themeMode") }
     }
     var hapticFeedback: Bool {
         didSet { UserDefaults.standard.set(hapticFeedback, forKey: "hapticFeedbackEnabled") }
@@ -39,7 +40,14 @@ class AppSettings {
         pushNotifications = defaults.object(forKey: "pushNotificationsEnabled") as? Bool ?? true
         dailyReminder = defaults.object(forKey: "dailyReminderEnabled") as? Bool ?? true
         habitAlerts = defaults.object(forKey: "habitAlertsEnabled") as? Bool ?? false
-        darkMode = defaults.object(forKey: "darkModeEnabled") as? Bool ?? true
+        
+        if let rawValue = defaults.string(forKey: "themeMode"),
+           let mode = ThemeMode(rawValue: rawValue) {
+            themeMode = mode
+        } else {
+            themeMode = .system // default
+        }
+        
         hapticFeedback = defaults.object(forKey: "hapticFeedbackEnabled") as? Bool ?? true
         weeklyReport = defaults.object(forKey: "weeklyReportEnabled") as? Bool ?? true
         accentColorName = defaults.string(forKey: "accentColorName") ?? "accentPrimary"

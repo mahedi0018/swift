@@ -37,6 +37,7 @@ struct HomeView: View {
                         subtitle: Date().formattedHeaderDate,
                         hasNotification: true
                     )
+                    .staggeredAppear(index: 0)
                     
                     // MARK: - Daily Motivation Banner
                     HStack {
@@ -44,49 +45,18 @@ struct HomeView: View {
                             .shimmerLight()
                         
                     }
+                    .staggeredAppear(index: 1)
                     
                     // MARK: - Weekly Habit Streak Card
-                    VStack(alignment: .leading, spacing: 14) {
-                        HStack {
-                            VStack(alignment: .leading, spacing: 2) {
-                                Text("Weekly Habit Streak")
-                                    .font(.title3.bold())
-                                Text(Date().weeklyStreakDateRange)
-                                    .font(.caption)
-                                    .foregroundColor(.secondary)
-                            }
-                            
-                            Spacer()
-                            
-                            // Streak Badge
-                            HStack(spacing: 4) {
-                                Text("\u{1F44B}\u{FE0F}")
-                                    .font(.system(size: 21))
-                                Text("6 day streak")
-                                    .font(.caption.bold())
-                                    .foregroundColor(.white)
-                            }
-                            .padding(.horizontal, 10)
-                            .padding(.vertical, 6)
-                            .background(
-                                Capsule()
-                                    .fill(Color.warning
-                                        .opacity(0.15)))
-                        }
-                        
-                        
-                    }
-                    // MARK: - Chart Bars Component
-                    WeeklyStreakView(weekData: habitViewModel.rollingWeekChartData(logs: allLogs))
-                        .gradientBorder(
-                            shape: RoundedRectangle(cornerRadius: 28),
-                            duration: 5,
-                            gradientModifier: spinCustomAnimation()
-                        )
-                    
+                    WeeklyStreakCardView(
+                        habitViewModel: habitViewModel
+                    )
+                    .staggeredAppear(index: 2)
+                   
                     
                     // MARK: - Tasks Progress Card
                     TasksProgressCardView()
+                        .staggeredAppear(index: 3)
                     
                     // MARK: - Today Section Header
                     HStack {
@@ -106,7 +76,7 @@ struct HomeView: View {
                     
                     // MARK: - Task Items List
                     VStack(spacing: 12) {
-                        ForEach(viewModel.tasks) { task in
+                        ForEach(viewModel.tasks.enumerated(), id: \.element.id) { index, task in
                             TaskRow(
                                 task: task,
                                 onToggle: {
@@ -118,6 +88,7 @@ struct HomeView: View {
                                     }
                                 }
                             )
+                            .staggeredAppear(index: index)
                         }
                     }
                 }

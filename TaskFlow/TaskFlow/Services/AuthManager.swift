@@ -141,15 +141,46 @@ extension AuthManager {
     }
     
     var displayName: String {
-            if let name = currentUser?.displayName, !name.isEmpty {
-                return name
-            }
-            
-            
-            if let email = currentUser?.email, let username = email.components(separatedBy: "@").first {
-                return username.capitalized // যেমন: "mahedijajabor001" -> "Mahedijajabor001"
-            }
-            
-            return "TaskFlow User"
+        if let name = currentUser?.displayName, !name.isEmpty {
+            return name
         }
+        
+        
+        if let email = currentUser?.email, let username = email.components(separatedBy: "@").first {
+            return username.capitalized // like: "mahedijajabor001" -> "Mahedijajabor001"
+        }
+        
+        return "TaskFlow User"
+    }
+    
+    func reauthenticate(password: String) async throws {
+        guard let user = Auth.auth().currentUser, let email = user.email else {
+            throw AuthError.noUser
+        }
+        let credential = EmailAuthProvider.credential(withEmail: email, password: password)
+        try await user.reauthenticate(with: credential)
+    }
+    
+    func updatePassword(currentPassword: String, newPassword: String) async throws {
+        try await reauthenticate(password: currentPassword)
+        try await Auth.auth().currentUser?.updatePassword(to: newPassword)
+    }
+    
+    func deleteAccount(password: String) async throws {
+        try await reauthenticate(password: password)
+        // Firebase account delete করার আগে লোকাল Realm ডেটা মুছে ফেলো —
+        // কারণ delete হয়ে গেলে uid আর পাওয়া যাবে না, filter করে মোছাও যাবে না
+        RealmManager.shared.deleteAllUserData()
+        try await Auth.auth().currentUser?.delete()
+        signOut()
+    }
+}
+
+enum AuthError: LocalizedError {
+    case noUser
+    var errorDescription: String? {
+        switch self {
+        case .noUser: return "No signed-in user found."
+        }
+    }
 }

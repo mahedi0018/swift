@@ -22,14 +22,13 @@ class AnalyticsViewModel {
     }
     
     // MARK: - Stat Card 2: Habit Rate (avg completion %)
-    func habitRate(_ habits: [Habit]) -> Int {
+    func habitRate(_ habits: [Habit], logs: [HabitCompletionLog]) -> Int {
         guard !habits.isEmpty else { return 0 }
-        let totalPossible = habits.count * 7
-        let totalCompleted = habits.reduce(0) { sum, habits in
-            sum + habits.weeklyCompletion.filter{ $0 }.count
-        }
+        guard let windowStart = Calendar.current.date(byAdding: .day, value: -30, to: Date()) else { return 0 }
+        let completedCount = logs.filter { $0.date >= windowStart && $0.isCompleted }.count
+        let totalPossible = habits.count * 30
         guard totalPossible > 0 else { return 0 }
-        return Int((Double(totalCompleted) / Double(totalPossible)) * 100)
+        return Int((Double(completedCount) / Double(totalPossible)) * 100)
     }
     
     // MARK: - Stat Card 3: Current Streak
@@ -63,20 +62,28 @@ class AnalyticsViewModel {
     }
     
     // MARK: - Best Performing Day
-    func bestPerformingDay(_ habits: [Habit]) -> (day: String, percentage: Int)? {
-        let dayLabels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+    func bestPerformingDay(_ habits: [Habit], logs: [HabitCompletionLog]) -> (day: String, percentage: Int)? {
         guard !habits.isEmpty else { return nil }
-        var bestIndex = 0
-        var bestCount = 0
-        for dayIndex in 0..<7 {
-            let completedCount = habits.filter { $0.weeklyCompletion[dayIndex] }.count
-            if completedCount > bestCount {
-                bestCount = completedCount
-                bestIndex = dayIndex
-            }
+        let calendar = Calendar.current
+        let dayLabels = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]   // calendar weekday: 1=Sun...7=Sat
+        
+        guard let windowStart = calendar.date(byAdding: .day, value: -28, to: Date()) else { return nil }
+        let recentCompletedLogs = logs.filter { $0.date >= windowStart && $0.isCompleted }
+        guard !recentCompletedLogs.isEmpty else { return nil }
+        
+        var countsByWeekday: [Int: Int] = [:]
+        for log in recentCompletedLogs {
+            let weekday = calendar.component(.weekday, from: log.date)
+            countsByWeekday[weekday, default: 0] += 1
         }
-        let percentage = Int((Double(bestCount) / Double(habits.count)) * 100)
-        return (dayLabels[bestIndex], percentage)
+        
+        guard let best = countsByWeekday.max(by: { $0.value < $1.value }) else { return nil }
+        
+        let approxOccurrences = 4   // ~28 দিনে প্রতিটা weekday মোটামুটি ৪ বার আসে
+        let totalPossible = habits.count * approxOccurrences
+        let percentage = totalPossible > 0 ? min(Int((Double(best.value) / Double(totalPossible)) * 100), 100) : 0
+        
+        return (dayLabels[best.key - 1], percentage)
     }
     
     // MARK: - Week-level data (Every week data for running month)

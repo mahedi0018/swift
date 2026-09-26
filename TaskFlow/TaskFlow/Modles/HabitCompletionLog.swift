@@ -14,4 +14,5 @@ class HabitCompletionLog: Object, Identifiable {
     @Persisted var date: Date = Date()      // Thik kon dine complete hoyeche
     @Persisted var isCompleted: Bool = true
     @Persisted var userId: String = ""
+    @Persisted var isDayFrozen: Bool = false
 }

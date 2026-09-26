@@ -62,18 +62,19 @@ enum MockData {
     
     // MARK: - Demo historical logs (গত ৬ মাসের জন্য, 7-Month Trend চার্ট সাজানোর জন্য)
     static func makeHistoricalDemoLogs(for habits: [Habit]) -> [HabitCompletionLog] {
-        let calendar = Calendar.current
-        let today = Date()
-        var logs: [HabitCompletionLog] = []
-        
-        // প্রতিটা past মাসের জন্য (1 থেকে 6 মাস আগে পর্যন্ত)
-        for monthOffset in 1...6 {
-            guard let monthDate = calendar.date(byAdding: .month, value: -monthOffset, to: today) else { continue }
-            guard let monthInterval = calendar.dateInterval(of: .month, for: monthDate) else { continue }
+            let calendar = Calendar.current
+            let today = calendar.startOfDay(for: Date())
+            var logs: [HabitCompletionLog] = []
             
-            // ওই মাসের প্রতিটা দিনের জন্য
-            var dayCursor = monthInterval.start
-            while dayCursor < monthInterval.end {
+            // 💡 Fix: আজ থেকে ১৮০ দিন আগে শুরু হবে এবং ৭ দিন আগে শেষ হবে।
+            // এতে করে Current Week (গত ৭ দিন) এর সাথে কোনো Overlap হবে না!
+            guard let startDate = calendar.date(byAdding: .day, value: -180, to: today),
+                  let endDate = calendar.date(byAdding: .day, value: -7, to: today) else {
+                return logs
+            }
+            
+            var dayCursor = startDate
+            while dayCursor <= endDate {
                 for habit in habits {
                     // প্রতিটা habit-এর জন্য random completion (৬০-৯০% chance completed)
                     let completionChance = Double.random(in: 0.5...0.9)
@@ -85,10 +86,11 @@ enum MockData {
                         logs.append(log)
                     }
                 }
+                // পরের দিনে যাওয়া
                 guard let nextDay = calendar.date(byAdding: .day, value: 1, to: dayCursor) else { break }
                 dayCursor = nextDay
             }
+            
+            return logs
         }
-        return logs
-    }
 }

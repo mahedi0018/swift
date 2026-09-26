@@ -13,7 +13,7 @@ import FirebaseCore
 @main
 struct TaskFlowApp: App {
     
-    
+    @State private var settings = AppSettings.shared
     
     init() {
         if FirebaseApp.app() == nil {
@@ -24,6 +24,7 @@ struct TaskFlowApp: App {
     var body: some Scene {
         WindowGroup {
             RootView()
+                .preferredColorScheme(settings.themeMode.colorScheme)
         }
     }
 }

@@ -19,7 +19,7 @@ struct StatCardView: View {
             Image(systemName: icon)
                 .font(.system(size: 16, weight: .bold))
                 .foregroundStyle(.white)
-                .frame(width: 20, height: 20)
+                .frame(width: 24, height: 24)
                 .background(color)
                 .clipShape(RoundedRectangle(cornerRadius: 8))
             

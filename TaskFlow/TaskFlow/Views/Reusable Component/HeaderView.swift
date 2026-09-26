@@ -89,7 +89,7 @@ struct HeaderView: View {
             }
             .buttonStyle(.plain)
         }
-        .padding(.horizontal, 16)
+//        .padding(.horizontal, 16)
         .padding(.top, topSafeArea > 0 ? topSafeArea : 10)
     }
 }

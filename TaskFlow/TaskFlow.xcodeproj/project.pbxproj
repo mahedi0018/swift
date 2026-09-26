@@ -29,6 +29,15 @@
 		DC2423163041B0EB007DFBAF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC2423153041B0EB007DFBAF /* GoogleService-Info.plist */; };
 		DC24231A3041E379007DFBAF /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2423193041E379007DFBAF /* Date+Extensions.swift */; };
 		DC24231C304305F3007DFBAF /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC24231B304305F3007DFBAF /* NotificationManager.swift */; };
+		DC6598EC304829B000E53757 /* MilestoneHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6598EB304829B000E53757 /* MilestoneHelper.swift */; };
+		DC6598EE30482EF300E53757 /* HeatmapDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6598ED30482EF300E53757 /* HeatmapDay.swift */; };
+		DC6598F230482FA100E53757 /* HabitHeatmapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6598F130482FA100E53757 /* HabitHeatmapView.swift */; };
+		DC6598F43048303000E53757 /* HabitDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6598F33048303000E53757 /* HabitDetailView.swift */; };
+		DC6598F63049BA3800E53757 /* WeeklyStreakCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6598F53049BA3800E53757 /* WeeklyStreakCardView.swift */; };
+		DC806669304BFA0300528CE0 /* PrivacySecurityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC806668304BFA0300528CE0 /* PrivacySecurityView.swift */; };
+		DC80666B304C05C000528CE0 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC80666A304C05C000528CE0 /* SettingsViewModel.swift */; };
+		DC80666D304EBE8600528CE0 /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC80666C304EBE8600528CE0 /* PrivacyPolicyView.swift */; };
+		DC80666F304ED5D400528CE0 /* StaggeredAppearModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC80666E304ED5D400528CE0 /* StaggeredAppearModifier.swift */; };
 		DC808C2530398D980090CDED /* AddHabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC808C2430398D980090CDED /* AddHabitView.swift */; };
 		DC808C273039D8330090CDED /* ChartLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC808C263039D8330090CDED /* ChartLevel.swift */; };
 		DC808C293039DCC50090CDED /* AnalyticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC808C283039DCC50090CDED /* AnalyticsViewModel.swift */; };
@@ -85,6 +94,15 @@
 		DC2423153041B0EB007DFBAF /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DC2423193041E379007DFBAF /* Date+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		DC24231B304305F3007DFBAF /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		DC6598EB304829B000E53757 /* MilestoneHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneHelper.swift; sourceTree = "<group>"; };
+		DC6598ED30482EF300E53757 /* HeatmapDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeatmapDay.swift; sourceTree = "<group>"; };
+		DC6598F130482FA100E53757 /* HabitHeatmapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitHeatmapView.swift; sourceTree = "<group>"; };
+		DC6598F33048303000E53757 /* HabitDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailView.swift; sourceTree = "<group>"; };
+		DC6598F53049BA3800E53757 /* WeeklyStreakCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyStreakCardView.swift; sourceTree = "<group>"; };
+		DC806668304BFA0300528CE0 /* PrivacySecurityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacySecurityView.swift; sourceTree = "<group>"; };
+		DC80666A304C05C000528CE0 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		DC80666C304EBE8600528CE0 /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
+		DC80666E304ED5D400528CE0 /* StaggeredAppearModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaggeredAppearModifier.swift; sourceTree = "<group>"; };
 		DC808C2430398D980090CDED /* AddHabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitView.swift; sourceTree = "<group>"; };
 		DC808C263039D8330090CDED /* ChartLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartLevel.swift; sourceTree = "<group>"; };
 		DC808C283039DCC50090CDED /* AnalyticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsViewModel.swift; sourceTree = "<group>"; };
@@ -165,6 +183,15 @@
 			path = Extensisons;
 			sourceTree = "<group>";
 		};
+		DC806667304BF9D400528CE0 /* Privacy & Security */ = {
+			isa = PBXGroup;
+			children = (
+				DC806668304BFA0300528CE0 /* PrivacySecurityView.swift */,
+				DC80666C304EBE8600528CE0 /* PrivacyPolicyView.swift */,
+			);
+			path = "Privacy & Security";
+			sourceTree = "<group>";
+		};
 		DC9B87C0302752E700776598 = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +260,8 @@
 				DC2422FF303F01E2007DFBAF /* AccentColorPickerView.swift */,
 				DC242301303F0236007DFBAF /* AppSettings.swift */,
 				DC094B76304569E90047EB89 /* RollingDayInfo.swift */,
+				DC6598EB304829B000E53757 /* MilestoneHelper.swift */,
+				DC6598ED30482EF300E53757 /* HeatmapDay.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -243,6 +272,7 @@
 				DCD721733031CF0100FCB746 /* TaskListViewModel.swift */,
 				DCCA12F1303483D40096A9CB /* HabitListViewModel.swift */,
 				DC808C283039DCC50090CDED /* AnalyticsViewModel.swift */,
+				DC80666A304C05C000528CE0 /* SettingsViewModel.swift */,
 			);
 			path = ViewModles;
 			sourceTree = "<group>";
@@ -270,6 +300,8 @@
 				DCD721793031CF0100FCB746 /* HabitsView.swift */,
 				DCCA12F33036EAEF0096A9CB /* HabitItemView.swift */,
 				DC808C2430398D980090CDED /* AddHabitView.swift */,
+				DC6598F130482FA100E53757 /* HabitHeatmapView.swift */,
+				DC6598F33048303000E53757 /* HabitDetailView.swift */,
 			);
 			path = Habits;
 			sourceTree = "<group>";
@@ -279,6 +311,7 @@
 			children = (
 				DCD7217C3031CF0100FCB746 /* HomeView.swift */,
 				DCD7217B3031CF0100FCB746 /* AddTaskView.swift */,
+				DC6598F53049BA3800E53757 /* WeeklyStreakCardView.swift */,
 				DCD7217D3031CF0100FCB746 /* WeeklyStreakView.swift */,
 				DC2422F5303DBA33007DFBAF /* TaskRow.swift */,
 				DC094B7430446B4C0047EB89 /* TasksProgressCardView.swift */,
@@ -305,6 +338,7 @@
 				DC2422F9303ED8F7007DFBAF /* SettingsToggleRow.swift */,
 				DC2422FB303F0063007DFBAF /* SettingsNavRow.swift */,
 				DC2422FD303F0117007DFBAF /* SettingsSectionCard.swift */,
+				DC806667304BF9D400528CE0 /* Privacy & Security */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -348,6 +382,7 @@
 			children = (
 				DCD721A430331A5500FCB746 /* SpinModifier.swift */,
 				DCD721653031CF0100FCB746 /* ShimmerLightModifier.swift */,
+				DC80666E304ED5D400528CE0 /* StaggeredAppearModifier.swift */,
 			);
 			path = AnimationModifier;
 			sourceTree = "<group>";
@@ -385,7 +420,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 2630;
-				LastUpgradeCheck = 2630;
+				LastUpgradeCheck = 2700;
 				TargetAttributes = {
 					DC9B87C8302752E700776598 = {
 						CreatedOnToolsVersion = 26.3;
@@ -433,15 +468,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC2422EE303B0596007DFBAF /* StatCardView.swift in Sources */,
+				DC6598EE30482EF300E53757 /* HeatmapDay.swift in Sources */,
 				DC2422FE303F0117007DFBAF /* SettingsSectionCard.swift in Sources */,
 				DCCA12F43036EAEF0096A9CB /* HabitItemView.swift in Sources */,
 				DCCA12F2303483D40096A9CB /* HabitListViewModel.swift in Sources */,
 				DCD721893031CF0100FCB746 /* CardStyleModifier.swift in Sources */,
 				DCD721A23031DA3A00FCB746 /* GradientBorderModifier.swift in Sources */,
 				DC2422F6303DBA33007DFBAF /* TaskRow.swift in Sources */,
+				DC80666F304ED5D400528CE0 /* StaggeredAppearModifier.swift in Sources */,
 				DCD7218A3031CF0100FCB746 /* GlassCardModifier.swift in Sources */,
+				DC806669304BFA0300528CE0 /* PrivacySecurityView.swift in Sources */,
 				DC24230F30406202007DFBAF /* LoginView.swift in Sources */,
 				DCD7218B3031CF0100FCB746 /* ShimmerLightModifier.swift in Sources */,
+				DC6598EC304829B000E53757 /* MilestoneHelper.swift in Sources */,
+				DC6598F230482FA100E53757 /* HabitHeatmapView.swift in Sources */,
 				DCD7218C3031CF0100FCB746 /* Habit.swift in Sources */,
 				DC2422F0303B061D007DFBAF /* CategoryBreakdownRow.swift in Sources */,
 				DCD7218D3031CF0100FCB746 /* Tab.swift in Sources */,
@@ -454,6 +494,7 @@
 				DC2422F4303B1877007DFBAF /* HabitCompletionLog.swift in Sources */,
 				DCD7218F3031CF0100FCB746 /* RealmManager.swift in Sources */,
 				DC24230C30406192007DFBAF /* AuthManager.swift in Sources */,
+				DC6598F63049BA3800E53757 /* WeeklyStreakCardView.swift in Sources */,
 				DCD721903031CF0100FCB746 /* AppGradients.swift in Sources */,
 				DCD721913031CF0100FCB746 /* Color+Theme.swift in Sources */,
 				DCD721923031CF0100FCB746 /* Environment+Extension.swift in Sources */,
@@ -463,6 +504,7 @@
 				DC2422FC303F0063007DFBAF /* SettingsNavRow.swift in Sources */,
 				DCD721943031CF0100FCB746 /* AnalyticsView.swift in Sources */,
 				DCD721953031CF0100FCB746 /* DailyMotivationBadge.swift in Sources */,
+				DC80666D304EBE8600528CE0 /* PrivacyPolicyView.swift in Sources */,
 				DCD721A530331A5500FCB746 /* SpinModifier.swift in Sources */,
 				DCD721963031CF0100FCB746 /* HabitsView.swift in Sources */,
 				DCD721973031CF0100FCB746 /* AddTaskView.swift in Sources */,
@@ -481,6 +523,8 @@
 				DCD7219D3031CF0100FCB746 /* MainTabView.swift in Sources */,
 				DCD7219E3031CF0100FCB746 /* TaskFlowApp.swift in Sources */,
 				DC808C293039DCC50090CDED /* AnalyticsViewModel.swift in Sources */,
+				DC6598F43048303000E53757 /* HabitDetailView.swift in Sources */,
+				DC80666B304C05C000528CE0 /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,7 +565,9 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = T26823HHV8;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -543,6 +589,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -582,7 +629,9 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = T26823HHV8;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -597,6 +646,7 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 			};
 			name = Release;
@@ -610,8 +660,9 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = T26823HHV8;
+				DEAD_CODE_STRIPPING = YES;
 				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_INCOMING_NETWORK_CONNECTIONS = YES;
 				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
 				ENABLE_PREVIEWS = YES;
@@ -667,8 +718,9 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = T26823HHV8;
+				DEAD_CODE_STRIPPING = YES;
 				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_INCOMING_NETWORK_CONNECTIONS = YES;
 				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
 				ENABLE_PREVIEWS = YES;

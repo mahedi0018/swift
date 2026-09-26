@@ -31,6 +31,10 @@ struct MainTabView: View {
                         SettingsView()
                     }
                 }
+//                .transition(.asymmetric(
+//                    insertion: .move(edge: .top).combined(with: .opacity),
+//                    removal: .opacity
+//                ))
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .environment(\.topSafeArea, topSafeArea)
                 .environment(\.tabBarHeight, tabBarHeight)

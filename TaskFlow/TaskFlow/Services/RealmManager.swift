@@ -16,21 +16,21 @@ class RealmManager {
     
     private init() {
         var config: Realm.Configuration
-
-          if ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1" {
-              // Preview Canvas এ চলছে — in-memory, isolated Realm ব্যবহার করো
-              config = Realm.Configuration(inMemoryIdentifier: "PreviewRealm")
-          } else {
-              // আসল app/Simulator/Device — normal disk-based Realm
-              config = Realm.Configuration(
-                  schemaVersion: 2,
-                  migrationBlock: { migration, oldSchemaVersion in },
-                  deleteRealmIfMigrationNeeded: true
-              )
-          }
-
-          Realm.Configuration.defaultConfiguration = config
-          realm = try! Realm()
+        
+        if ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1" {
+            // Preview Canvas a colche — in-memory, isolated Realm use kora hoyeche
+            config = Realm.Configuration(inMemoryIdentifier: "PreviewRealm")
+        } else {
+            // For real app/Simulator/Device — normal disk-based Realm
+            config = Realm.Configuration(
+                schemaVersion: 3,
+                migrationBlock: { migration, oldSchemaVersion in },
+                deleteRealmIfMigrationNeeded: true
+            )
+        }
+        
+        Realm.Configuration.defaultConfiguration = config
+        realm = try! Realm()
         print("Realm file location: \(realm.configuration.fileURL?.absoluteString ?? "Unknown")")
     }
     
@@ -93,9 +93,13 @@ class RealmManager {
         guard let uid = AuthManager.shared.currentUser?.uid else { return }
         // oi diner jonno age theke kono log ache ki na ta khuje ber kora
         let calendar = Calendar.current
+        
+        let startOfDay = calendar.startOfDay(for: date)
+        guard let endOfDay = calendar.date(byAdding: .day, value: 1, to: startOfDay) else { return }
+        
         let existingLog = realm.objects(HabitCompletionLog.self)
-            .filter("habitId == %@", habitId)
-            .first{ calendar.isDate($0.date, inSameDayAs: date) }
+            .filter("habitId == %@ AND date >= %@ AND date < %@", habitId, startOfDay, endOfDay)
+            .first
         try! realm.write{
             if let existingLog {
                 existingLog.isCompleted = isCompleted
@@ -114,9 +118,9 @@ class RealmManager {
         realm.objects(HabitCompletionLog.self).filter("habitId == %@", habitId)
     }
     
-    func deleteCompletionLogs(habitId: UUID) {
+    func deleteAllLogs(forHabitId habitId: UUID) {
         let logsToDelete = realm.objects(HabitCompletionLog.self).filter("habitId == %@", habitId)
-        try! realm.write{
+        try! realm.write {
             realm.delete(logsToDelete)
         }
     }
@@ -143,5 +147,41 @@ class RealmManager {
             return realm.objects(HabitCompletionLog.self).filter("userId == 'NO_USER'")
         }
         return realm.objects(HabitCompletionLog.self).filter("userId == %@", uid)
+    }
+    
+    func applyFreeze(habitId: UUID, date: Date) {
+        let calendar = Calendar.current
+        
+        let startOfDay = calendar.startOfDay(for: date)
+        guard let endOfDay = calendar.date(byAdding: .day, value: 1, to: startOfDay) else { return }
+        
+        let existingLog = realm.objects(HabitCompletionLog.self)
+            .filter("habitId == %@ AND date >= %@ AND date < %@", habitId, startOfDay, endOfDay)
+            .first
+        
+        try! realm.write {
+            if let existingLog {
+                existingLog.isDayFrozen = true
+                existingLog.isCompleted = false
+            } else {
+                let log = HabitCompletionLog()
+                log.habitId = habitId
+                log.date = date
+                log.isCompleted = false
+                log.isDayFrozen = true
+                log.userId = AuthManager.shared.currentUser?.uid ?? ""
+                realm.add(log)
+            }
+        }
+    }
+    
+    func deleteAllUserData() {
+        guard let uid = AuthManager.shared.currentUser?.uid else { return }
+        try! realm.write {
+            realm.delete(realm.objects(Task.self).filter("userId == %@", uid))
+            realm.delete(realm.objects(Habit.self).filter("userId == %@", uid))
+            realm.delete(realm.objects(HabitCompletionLog.self).filter("userId == %@", uid))
+//            realm.delete(realm.objects(HabitFreezeLog.self).filter("userId == %@", uid))
+        }
     }
 }

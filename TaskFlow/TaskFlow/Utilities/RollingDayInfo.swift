@@ -12,5 +12,6 @@ struct RollingDayInfo: Identifiable {
     let date: Date
     let label: String
     let isCompleted: Bool
+    let isFrozen: Bool
     let isToday: Bool
 }
